@@ -7,9 +7,16 @@ import random as rand
 spot_color = "purple"
 score = 0
 font_setup = ("Arial",20, "normal")
+font_setup = ("Arial", 20, "normal")
+timer = 30
+counter_interval = 1000   #1000 represents 1 second
+timer_up = False
 
 #-----initialize turtle-----
 #clicker turtle
+counter =  trtl.Turtle()
+counter.penup()
+counter.goto(0,250)
 meowl = trtl.Turtle()
 meowl.shape("circle")
 meowl.color(spot_color)
@@ -42,11 +49,25 @@ def scoreBox():
     score_writers.penup()
     score_writers.goto(300,310)
 
-
+def countdown():
+  global timer, timer_up
+  counter.clear()
+  if timer <= 0:
+    counter.write("Time's Up", font=font_setup)
+    timer_up = True
+  else:
+    counter.write("Timer: " + str(timer), font=font_setup)
+    timer -= 1
+    counter.getscreen().ontimer(countdown, counter_interval)
 
 
 def spot_clicked(x,y):
-    change_position()
+    if timer_up is False:
+        change_position()
+    else:
+        meowl.hideturtle()
+
+
 
 
 
@@ -76,4 +97,5 @@ scoreBox()
 
 # Set up the Screen
 wn = trtl.Screen()
+wn.ontimer(countdown, counter_interval)
 wn.mainloop()
