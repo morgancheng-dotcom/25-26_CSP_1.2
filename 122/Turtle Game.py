@@ -1,4 +1,5 @@
 # a121_catch_a_turtle.py
+
 #-----import statements-----
 import turtle as trt
 import turtle as trtl
@@ -14,10 +15,15 @@ counter_interval = 1000   #1000 represents 1 second
 timer_up = False
 turtle_size = ["3","2","1",".8",".5"]
 #-----initialize turtle-----
-#clicker turtle
+leaderboard_file_name = "a122_leaderboard.txt"
+player_name =input("What is your name?")
+
+
+#counter turtle
 counter =  trtl.Turtle()
 counter.penup()
 counter.goto(0,250)
+#clicker turtle
 meowl = trtl.Turtle()
 meowl.shape("circle")
 meowl.color(spot_color)
@@ -70,7 +76,6 @@ def spot_clicked(x,y):
     size_turtle()
     if timer_up == False:
         change_position()
-        size_turtle(meowl, shape.size)
     else:
         meowl.hideturtle()
 
@@ -87,6 +92,30 @@ def update_score():
     score += 1
     score_writers.clear()
     score_writers.write(score,font=font_setup)
+
+
+# CODE TO ADD
+# Add this function to your game code
+
+# manages the leaderboard for top 5 scorers
+def manage_leaderboard():
+
+  global score
+  global meowl
+
+  # get the names and scores from the leaderboard file
+  leader_names_list = lb.get_names(leaderboard_file_name)
+  leader_scores_list = lb.get_scores(leaderboard_file_name)
+
+  # show the leaderboard with or without the current player
+  if (len(leader_scores_list) < 5 or score >= leader_scores_list[4]):
+    lb.update_leaderboard(leaderboard_file_name, leader_names_list, leader_scores_list, player_name, score)
+    lb.draw_leaderboard(True, leader_names_list, leader_scores_list, meowl, score)
+
+  else:
+    lb.draw_leaderboard(False, leader_names_list, leader_scores_list, meowl, score)
+
+
 
 
 #-----events----------------
