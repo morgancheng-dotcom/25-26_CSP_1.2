@@ -5,6 +5,7 @@ import turtle as trt
 import turtle as trtl
 import random as rand
 import turtle as wn
+import leaderboard as lb
 #-----game configuration----
 spot_color = "purple"
 score = 0
@@ -62,6 +63,7 @@ def countdown():
   if timer <= 0:
     counter.write("Time's Up", font=font_setup)
     timer_up = True
+    manage_leaderboard()
   else:
     counter.write("Timer: " + str(timer), font=font_setup)
     timer -= 1
