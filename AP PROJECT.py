@@ -9,10 +9,10 @@ Fact_3 = "Molting (shedding scales) helps snakes get rid of ticks and parasites.
 Fact_4 = "Snakes can lay eggs and also give live birth"
 Fact_5 = "Black mambas can slither at speeds up to 19km/h, while sidewinder rattlesnakes can reach speeds of up to 29km/h."
 Fact_6 = "Serpents can smell in stereo, thanks to their forked tongues that they use to collect chemicals from the environment."
-Fact_7 = "A group of sharks is called a shiver and there are more than 500 species of sharks."
-Fact_8 = "Sharks use electro-reception, which means they can sense electric fields sent out by other animals, including animals that are their prey."
-Fact_9 = "Sharks go into a trance-like state, called tonic immobility, when they are upside down."
-Fact_10 = "You are more likely to die from a bee sting or a lightning strike than a shark attack."
+Fact_7 = "Lacking external ears, snakes hear by sensing vibrations through their jawbones."
+Fact_8 = "Some snake venom is used in medicine to treat blood pressure issues, heart attacks, and blood disorders."
+Fact_9 = "Snakes do not have vocal cords but can produce a hissing sound by forcing air through their windpipe."
+Fact_10 = " Vipers, pythons, and rattlesnakes have pit holes in their faces that detect heat, allowing them to visualize warm-blooded prey."
 
 
 #list of facts
